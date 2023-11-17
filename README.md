@@ -28,7 +28,7 @@ config :assent,
   http_client: {AssentHTTPoison.Adapter, []}
 ```
 
-You can also pass custom options to HTTPoison:
+You can also pass [custom options to HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.Request.html):
 
 ```elixir
 config :assent,
