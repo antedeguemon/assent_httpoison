@@ -19,6 +19,7 @@ defmodule AssentHTTPoison.MixProject do
 
   defp deps do
     [
+      {:assent, ">= 0.1.11"},
       {:httpoison, "~> 1.8.0"}
     ]
   end
