@@ -1,4 +1,4 @@
-# assent_httposion
+# assent_httpoison
 [![Hex.pm: version](https://img.shields.io/hexpm/v/assent_httpoison.svg?style=flat-square)](https://hex.pm/packages/assent_httpoison)
 [![GitHub: CI status](https://img.shields.io/github/actions/workflow/status/antedeguemon/assent_httpoison/ci.yml?branch=main&style=flat-square)](https://github.com/antedeguemon/assent_httpoison/actions)
 ![License: MIT, same as Assent](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
@@ -13,7 +13,7 @@ Add `assent_httpoison` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:assent_httpoison, "~> 0.1.0"}
+    {:assent_httpoison, "~> 0.1"}
   ]
 end
 ```

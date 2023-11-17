@@ -4,7 +4,7 @@ defmodule AssentHTTPoison.MixProject do
   def project do
     [
       app: :assent_httpoison,
-      version: "0.1.0",
+      version: "0.1.1",
       description: "Assent adapter for making requests using HTTPoison",
       package: package(),
       docs: docs(),
