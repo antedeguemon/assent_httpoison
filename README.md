@@ -1,7 +1,8 @@
 # assent_httpoison
-[![Hex.pm: version](https://img.shields.io/hexpm/v/assent_httpoison.svg?style=flat-square)](https://hex.pm/packages/assent_httpoison)
-[![GitHub: CI status](https://img.shields.io/github/actions/workflow/status/antedeguemon/assent_httpoison/ci.yml?branch=main&style=flat-square)](https://github.com/antedeguemon/assent_httpoison/actions)
-![License: MIT, same as Assent](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
+[![Hex.pm: version](https://img.shields.io/hexpm/v/assent_httpoison.svg?style=flat)](https://hex.pm/packages/assent_httpoison)
+[![Docs](https://img.shields.io/badge/hex-docs-green.svg?style=flat)](https://hexdocs.pm/assent_httpoison)
+[![GitHub: CI status](https://img.shields.io/github/actions/workflow/status/antedeguemon/assent_httpoison/ci.yml?branch=main&style=flat)](https://github.com/antedeguemon/assent_httpoison/actions)
+![License: MIT, same as Assent](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)
 
 [Assent](https://hex.pm/packages/assent/) adapter for making requests using
 [HTTPoison](https://hex.pm/packages/httpoison).
