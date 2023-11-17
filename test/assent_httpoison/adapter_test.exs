@@ -19,7 +19,13 @@ defmodule AssentHTTPoison.AdapterTest do
   test "handles https requests" do
     TestServer.start(scheme: :https)
     TestServer.add("/", via: :get)
-    opts = [ssl: [cacerts: TestServer.x509_suite().cacerts]]
+
+    opts = [
+      ssl: [
+        cacerts: TestServer.x509_suite().cacerts,
+        verify: :verify_peer
+      ]
+    ]
 
     assert {:ok, %HTTPResponse{status: 200, body: "HTTP/1.1"}} =
              Adapter.request(:get, TestServer.url(), nil, [], opts)
@@ -27,8 +33,15 @@ defmodule AssentHTTPoison.AdapterTest do
 
   test "errors when ssl handshake fails" do
     TestServer.start(scheme: :https)
+
     bad_host_url = TestServer.url(host: "bad-host.localhost")
-    opts = [ssl: [cacerts: TestServer.x509_suite().cacerts]]
+
+    opts = [
+      ssl: [
+        cacerts: TestServer.x509_suite().cacerts,
+        verify: :verify_peer
+      ]
+    ]
 
     assert capture_log(fn ->
              assert {:error, %HTTPoison.Error{reason: {:tls_alert, {:handshake_failure, _}}}} =
@@ -40,10 +53,15 @@ defmodule AssentHTTPoison.AdapterTest do
     TestServer.start(scheme: :https)
     TestServer.add("/", via: :get)
     bad_host_url = TestServer.url(host: "bad-host.localhost")
-    opts = [ssl: [cacerts: TestServer.x509_suite().cacerts, verify: :verify_none]]
 
-    assert {:ok, %HTTPResponse{status: 200}} =
-             Adapter.request(:get, bad_host_url, nil, [], opts)
+    opts = [
+      ssl: [
+        cacerts: TestServer.x509_suite().cacerts,
+        verify: :verify_none
+      ]
+    ]
+
+    assert {:ok, %HTTPResponse{status: 200}} = Adapter.request(:get, bad_host_url, nil, [], opts)
   end
 
   test "errors when host is unreachable" do
