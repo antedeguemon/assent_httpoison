@@ -1,4 +1,4 @@
-defmodule AssentHttpoison.MixProject do
+defmodule AssentHTTPoison.MixProject do
   use Mix.Project
 
   def project do
