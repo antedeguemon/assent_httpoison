@@ -1,11 +1,14 @@
-# AssentHttpoison
+# assent_httposion
+[![Hex.pm: version](https://img.shields.io/hexpm/v/assent_httpoison.svg?style=flat-square)](https://hex.pm/packages/assent_httpoison)
+[![GitHub: CI status](https://img.shields.io/github/actions/workflow/status/antedeguemon/assent_httpoison/ci.yml?branch=main&style=flat-square)](https://github.com/antedeguemon/assent_httpoison/actions)
+![License: MIT, same as Assent](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
 
-**TODO: Add description**
+[Assent](https://hex.pm/packages/assent/) adapter for making requests using
+[HTTPoison](https://hex.pm/packages/httpoison).
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `assent_httpoison` to your list of dependencies in `mix.exs`:
+Add `assent_httpoison` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +18,22 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/assent_httpoison>.
+## Usage
 
+To use the HTTPoison adapter with Assent, configure it in your application
+settings:
+
+```elixir
+config :assent,
+  http_client: {AssentHTTPoison.Adapter, []}
+```
+
+You can also pass custom options to HTTPoison:
+
+```elixir
+config :assent,
+  http_client: {AssentHTTPoison.Adapter, [
+    timeout: 60_000,
+    max_redirect: 10
+  ]}
+```
