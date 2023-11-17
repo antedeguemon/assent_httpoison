@@ -20,7 +20,9 @@ defmodule AssentHTTPoison.MixProject do
   defp deps do
     [
       {:assent, ">= 0.1.11"},
-      {:httpoison, "~> 1.8.0"}
+      {:bandit, "~> 1.1", only: :test},
+      {:httpoison, "~> 1.8.0"},
+      {:test_server, "~> 0.1.13", only: :test}
     ]
   end
 end

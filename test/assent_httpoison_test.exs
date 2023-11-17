@@ -1,8 +1,8 @@
-defmodule AssentHttpoisonTest do
+defmodule AssentHTTPoison.HTTPAdapterTest do
   use ExUnit.Case
-  doctest AssentHttpoison
+  doctest AssentHTTPoison
 
   test "greets the world" do
-    assert AssentHttpoison.hello() == :world
+    assert AssentHTTPoison.hello() == :world
   end
 end
